@@ -32,10 +32,7 @@ jobs:
       
       - name: Terraform Init
         id: init
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: terraform init -backend-config="bucket=${{ secrets.BUCKET_TF_STATE }}" -backend-config="region=${{ env.AWS_REGION }}" -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" -backend-config="secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+        run: terraform init -backend-config="bucket=${{ secrets.BUCKET_TF_STATE }}"
 
       - name: Terraform Format
         id: fmt
