@@ -28,7 +28,7 @@ terraform {
 
   backend "s3" {
     bucket = "shipan-terraform-bucket-state"
-    key    = "terraform.tfstate"
+    key    = "backend/terraform.tfstate"
     region = "us-east-1"
   }
 
