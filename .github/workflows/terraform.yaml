@@ -16,7 +16,7 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
   BUCKET_TF_STATE: ${{secrets.BUCKET_TF_STATE}}
   AWS_REGION: us-east-1
-  EKS_CLUSTER: shipan-vprofile-eks
+  EKS_CLUSTER: "shipan-vprofile-eks"
 jobs:
   terraform:
     name: "Apply terraform code changes"
