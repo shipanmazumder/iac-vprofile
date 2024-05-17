@@ -34,11 +34,11 @@ jobs:
         # with:
         #   terraform_version: "1.1.7"
       
-      - name: Terraform init
+      - name: Terraform Init
         id: init
         run: terraform init -backend-config="bucket=$BUCKET_TF_STATE"
 
-      - name: Terraform format
+      - name: Terraform Format
         id: fmt
         run: terraform fmt -check
 
