@@ -12,10 +12,10 @@ on:
         - "terraform/**"
 env:
   AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-  AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCEsSS_KEY}}
+  AWS_SERECT_ACCESS_KEY: ${{secrets.AWS_SERECT_ACCESS_KEY}}
   BUCKET_TF_STATE: ${{secrets.BUCKET_TF_STATE}}
   AWS_REGION: us-east-1
-  EKS_CLUSTER: "shipan-vprofile-eks"
+  EKS_CLUSTER: shipan-vprofile-eks
 jobs:
   terraform:
     name: "Apply terraform code changes"
@@ -35,7 +35,7 @@ jobs:
       
       - name: Terraform Init
         id: init
-        run: terraform init -backend-config="bucket=${{secrets.BUCKET_TF_STATE}}"
+        run: terraform init -backend-config="bucket=$BUCKET_TF_STATE"
 
       - name: Terraform Format
         id: fmt
